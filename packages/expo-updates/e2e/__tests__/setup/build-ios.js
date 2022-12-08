@@ -1,10 +1,15 @@
 const spawnAsync = require('@expo/spawn-async');
+const { ExpoRunFormatter } = require('@expo/xcpretty');
 const fs = require('fs/promises');
 const path = require('path');
 
-const { ExpoRunFormatter } = require('@expo/xcpretty');
-
 async function buildAsync(projectRoot, destinationFolder, fileSuffix) {
+  // iOS cocoapods install
+  await spawnAsync('npx', ['pod-install'], {
+    cwd: projectRoot,
+    stdio: 'inherit',
+  });
+
   const proc = spawnAsync(
     'xcodebuild',
     [
