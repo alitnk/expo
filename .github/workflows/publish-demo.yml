@@ -1,16 +1,6 @@
 name: Publish Native Component List Website & Update
 on:
   workflow_dispatch: {}
-  push:
-    branches:
-      - main
-    paths:
-      - .github/workflows/publish-demo.yml
-      - yarn.lock
-      - apps/**
-      - packages/**
-      # Ignore Expo CLI for now...
-      - '!packages/@expo/cli/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

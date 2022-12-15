@@ -2,31 +2,6 @@ name: Android Instrumentation Tests
 
 on:
   workflow_dispatch: {}
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/android-instrumentation-tests.yml
-      - android/**
-      - fastlane/**
-      # - packages/**/android/**
-      - packages/expo-eas-client/android/**
-      - packages/expo-json-utils/android/**
-      - packages/expo-manifests/android/**
-      - packages/expo-updates/android/**
-      - yarn.lock
-      - '!packages/@expo/cli/**'
-  pull_request:
-    paths:
-      - .github/workflows/android-instrumentation-tests.yml
-      - android/**
-      - fastlane/**
-      # - packages/**/android/**
-      - packages/expo-eas-client/android/**
-      - packages/expo-json-utils/android/**
-      - packages/expo-manifests/android/**
-      - packages/expo-updates/android/**
-      - yarn.lock
-      - '!packages/@expo/cli/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

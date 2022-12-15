@@ -2,25 +2,6 @@ name: Android Unit Tests
 
 on:
   workflow_dispatch: {}
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/android-unit-tests.yml
-      - android/**
-      - fastlane/**
-      - packages/**/android/**
-      - tools/**
-      - yarn.lock
-      - '!packages/@expo/cli/**'
-  pull_request:
-    paths:
-      - .github/workflows/android-unit-tests.yml
-      - android/**
-      - fastlane/**
-      - packages/**/android/**
-      - tools/**
-      - yarn.lock
-      - '!packages/@expo/cli/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

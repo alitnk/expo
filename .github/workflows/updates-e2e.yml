@@ -2,31 +2,6 @@ name: Updates e2e
 
 on:
   workflow_dispatch: {}
-  pull_request:
-    paths:
-      - .github/workflows/updates-e2e.yml
-      - packages/expo-json-utils/**
-      - packages/expo-manifests/**
-      - packages/expo-modules-core/**
-      - packages/expo-structured-headers/**
-      - packages/expo-updates-interface/**
-      - packages/expo-updates/**
-      - packages/expo/android/**
-      - packages/expo/ios/**
-      - templates/expo-template-bare-minimum/**
-  push:
-    branches: [main, 'sdk-*']
-    paths:
-      - .github/workflows/updates-e2e.yml
-      - packages/expo-json-utils/**
-      - packages/expo-manifests/**
-      - packages/expo-modules-core/**
-      - packages/expo-structured-headers/**
-      - packages/expo-updates-interface/**
-      - packages/expo-updates/**
-      - packages/expo/android/**
-      - packages/expo/ios/**
-      - templates/expo-template-bare-minimum/**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

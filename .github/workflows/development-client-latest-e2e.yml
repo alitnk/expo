@@ -2,8 +2,6 @@ name: Development Client latest e2e
 
 on:
   workflow_dispatch: {}
-  schedule:
-    - cron: '0 0 * * SUN' # 0:00 AM UTC time every Sunday
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

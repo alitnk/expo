@@ -2,35 +2,6 @@ name: iOS Unit Tests
 
 on:
   workflow_dispatch: {}
-  pull_request:
-    paths:
-      - .github/workflows/ios-unit-tests.yml
-      - ios/**
-      - packages/**/ios/**
-      - tools/src/dynamic-macros/**
-      - tools/src/commands/IosGenerateDynamicMacros.ts
-      - tools/src/commands/IosNativeUnitTests.ts
-      - tools/src/commands/NativeUnitTests.ts
-      - secrets/**
-      - fastlane/**
-      - Gemfile.lock
-      - .ruby-version
-      - '!packages/@expo/cli/**'
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/ios-unit-tests.yml
-      - ios/**
-      - packages/**/ios/**
-      - tools/src/dynamic-macros/**
-      - tools/src/commands/IosGenerateDynamicMacros.ts
-      - tools/src/commands/IosNativeUnitTests.ts
-      - tools/src/commands/NativeUnitTests.ts
-      - secrets/**
-      - fastlane/**
-      - Gemfile.lock
-      - .ruby-version
-      - '!packages/@expo/cli/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

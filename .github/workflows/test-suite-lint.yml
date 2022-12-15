@@ -2,13 +2,6 @@ name: Test Suite Lint
 
 on:
   workflow_dispatch: {}
-  push:
-    branches: [main]
-    paths:
-      - apps/test-suite/**
-  pull_request:
-    paths:
-      - apps/test-suite/**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

@@ -1,40 +1,7 @@
 name: iOS Client
 
 on:
-  workflow_dispatch:
-    inputs:
-      releaseSimulator:
-        description: 'type "release-simulator" to confirm upload'
-        required: false
-  schedule:
-    - cron: '20 5 * * 1,3,5' # 5:20 AM UTC time on every Monday, Wednesday and Friday
-  pull_request:
-    paths:
-      - .github/workflows/client-ios.yml
-      - ios/**
-      - tools/src/dynamic-macros/**
-      - tools/src/commands/IosGenerateDynamicMacros.ts
-      - tools/src/client-build/**
-      - tools/src/commands/ClientBuild.ts
-      - secrets/**
-      - fastlane/**
-      - Gemfile.lock
-      - .ruby-version
-      - yarn.lock
-  push:
-    branches: [main, sdk-*]
-    paths:
-      - .github/workflows/client-ios.yml
-      - ios/**
-      - tools/src/dynamic-macros/**
-      - tools/src/commands/IosGenerateDynamicMacros.ts
-      - tools/src/client-build/**
-      - tools/src/commands/ClientBuild.ts
-      - secrets/**
-      - fastlane/**
-      - Gemfile.lock
-      - .ruby-version
-      - yarn.lock
+  workflow_dispatch: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

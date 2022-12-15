@@ -1,35 +1,7 @@
 name: Android Client
 
 on:
-  workflow_dispatch:
-    inputs:
-      releaseAPK:
-        description: 'type "release-apk" to confirm upload to S3'
-        required: false
-      releaseGooglePlay:
-        description: 'type "release-google-play" to confirm release to Google Play'
-        required: false
-  schedule:
-    - cron: '20 5 * * 1,3,5' # 5:20 AM UTC time on every Monday, Wednesday and Friday
-  pull_request:
-    paths:
-      - .github/workflows/client-android.yml
-      - secrets/**
-      - android/**
-      - fastlane/**
-      - Gemfile.lock
-      - .ruby-version
-      - yarn.lock
-  push:
-    branches: [main, sdk-*]
-    paths:
-      - .github/workflows/client-android.yml
-      - secrets/**
-      - android/**
-      - fastlane/**
-      - Gemfile.lock
-      - .ruby-version
-      - yarn.lock
+  workflow_dispatch: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
